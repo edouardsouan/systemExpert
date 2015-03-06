@@ -27,4 +27,24 @@ describe ("ExpertSystem", function () {
 
         }
     );
+	
+	it("should be able to set a fact to true", function()
+		{
+				expertSystem.addFact("A");
+				expertSystem.setFact("A",true);
+				
+				expect(expertSystem.getFactValue("A")).to.equal(true);
+		
+		});
+	
+	it("should be able to set a rule",function()
+		{
+		 expertSystem.AddRule(["A","B"],"C");
+		 expect(expertSystem.CountFact()).to.equal(3);
+		 
+		});
+		
+		
+		
+	it (
 });
