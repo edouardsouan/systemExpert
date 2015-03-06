@@ -1,22 +1,21 @@
-var ExpertSystem = require('./index');
+var ExpertSystem = require('./index.js');
+var expect = require('chai').expect;
 
 describe ("ExpertSystem", function () {
     var expertSystem;
 
-    beforeEach(
-        function () {
-            expertSystem = new ExpertSystem();
-        }
-    );
+    beforeEach(function () {
+        expertSystem = new ExpertSystem();
+    });
 
     it("should exist", function () {
-            expect(expertSystem).toBeTruthy();
+            expect(expertSystem).to.be.an('object');
         }
     );
 
     it("should be able to add a fact", function () {
             expertSystem.addFact("A");
-            expect(expertSystem.CountFact()).toBe(1);
+            expect(expertSystem.CountFact()).to.equal(1);
 
         }
     );
@@ -24,7 +23,7 @@ describe ("ExpertSystem", function () {
     it("should be able to add a range", function () {
             var listFact = ["A", "B", "C", "D", "E", "F"];
             expertSystem.addFactRange(listFact);
-            expect(expertSystem.CountFact()).toBe(6);
+            expect(expertSystem.CountFact()).to.equal(6);
 
         }
     );

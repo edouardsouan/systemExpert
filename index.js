@@ -4,14 +4,21 @@ function ExpertSystem() {
         facts.push(label);
     }
 
-    function countFact() {
+    function CountFact() {
         return facts.length;
+    }
+
+    function addFactRange(list) {
+        for(var item in list){
+            facts.push(item);
+        }
     }
 
 
     return Object.create({
         addFact: addFact,
-        countFact: countFact
+        CountFact: CountFact,
+        addFactRange: addFactRange
     });
 }
 

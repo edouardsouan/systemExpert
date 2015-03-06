@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/edouardsouan/systemExpert",
   "devDependencies": {
+    "chai": "^2.1.1",
     "jasmine": "^2.2.1",
     "mocha": "^2.1.0"
   }
