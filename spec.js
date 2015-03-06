@@ -41,10 +41,33 @@ describe ("ExpertSystem", function () {
 		{
 		 expertSystem.AddRule(["A","B"],"C");
 		 expect(expertSystem.CountFact()).to.equal(3);
+		 expect(expertSystem.CountRule()).to.equal(1);
 		 
 		});
 		
+	it ("should be able to infer forward", function()
+		{
+			expertSystem.addRule(["A","B"],"C");
+			expertSystem.setFactValue("A",true);
+			expertSystem.setFactValue("B",true);
+			
+			var infered = expertSystem.inferForward();
+			
+			expect(_.isEqual(infered,["C"])).to.equal(true);
+			expect (expertSystem.getFactValue("C")).to.equal(true);
+		});
 		
+	it("should be able to chain multiple rules", function()
+		{
+			expertSystem.addRule(["C"],"D");
+			expertSystem.addRule(["A","B"], "C");
+			expertSystem.setFactValue("A",true);
+			expertSystem.setFactValue("B",true);
+			
+			var infered = expertSystem.inferForward();
+			expect(_.isEqual(infered,["C","D"])).to.equal(true);
+			
+		});
 		
 	
 });
