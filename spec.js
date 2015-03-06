@@ -46,5 +46,5 @@ describe ("ExpertSystem", function () {
 		
 		
 		
-	it (
+	
 });
