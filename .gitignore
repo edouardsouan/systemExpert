@@ -1,4 +1,2 @@
 .idea
 nodes_modules
-node_modules/.bin/jasmine
-node_modules/.bin/jasmine.cmd
